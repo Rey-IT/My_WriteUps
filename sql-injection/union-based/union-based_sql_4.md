@@ -14,11 +14,11 @@ To solve the lab, display the database version string.
 
 After entering and examining it, we don't see anything interesting on the main page yet. So let's go to some product category and look there.
 
-![main site](../images/img-un-4/1.jpg)
+![main site](/images/img-un-4/1.jpg)
 
 We saw that a category parameter appears in the URL, which is almost certainly vulnerable to SQL injection.
 
-![Parameter](../images/img-un-4/2.jpg)
+![Parameter](/images/img-un-4/2.jpg)
 
 3. Exploitation
 
@@ -33,6 +33,6 @@ This will work because we already know the number of columns in the table by usi
 Now it's just a matter of small details: knowing that our database is MySQL, we know that the version can be retrieved using @@version, and comments in MySQL use the # symbol. 
 We replace spaces with %20 and the # symbol with %23.
 
-![Success](../images/img-un-4/5.jpg)
+![Success](/images/img-un-4/5.jpg)
 
 And we see that we are congratulated on successfully completing the lab.

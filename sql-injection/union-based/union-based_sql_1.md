@@ -11,19 +11,19 @@ To solve the lab, perform a SQL injection attack that causes the application to 
 2. Analytics
 
 I went to the website and tried to view the details of category of the products.
-![view on website](../images/img-un-1/1.jpg)
+![view on website](/images/img-un-1/1.jpg)
 
 First, you need to intercept the GET request to understand where to start
 
-![First look at the request](../images/img-un-1/2.jpg)
+![First look at the request](/images/img-un-1/2.jpg)
 
 3. Exploitation
 
 According to the task description, it is known that the parameter responsible for the product category is vulnerable to SQL injection. So, I'll try using a payload to test our theory.
 ' OR 1=1--
 
-![Payload](../images/img-un-1/3.jpg)
+![Payload](/images/img-un-1/3.jpg)
 
-![Success](../images/img-un-1/4.jpg)
+![Success](/images/img-un-1/4.jpg)
 
 Hooray, we were able to log in as admin and received a notification that the lab is solved.
