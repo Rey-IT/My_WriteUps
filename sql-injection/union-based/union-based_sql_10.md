@@ -14,15 +14,15 @@ To solve the lab, perform a SQL injection UNION attack that retrieves all userna
 
 Let's go into the lab and see nothing remarkable.
 
-![MAIN](/images)
+![MAIN](/images/img-un-10/1.jpg)
 
 That means it's worth looking at the product categories and searching for something there.
 
-![Category](/images)
+![Category](/images/img-un-10/2.jpg)
 
 We saw that a category parameter was added to the URL, which is potentially vulnerable to SQL injection. Let's try injecting a payload into the parameter to confirm our suspicions about SQLi.
 
-![SQLi](/images)
+![SQLi](/images/img-un-10/3.jpg)
 
 Well, SQLi really does exist.
 
@@ -32,16 +32,16 @@ Like all UNION-BASED tasks, we'll start by determining the number of columns.
 Using the already-known payload,
 ' UNION SELECT NULL, …--'
 
-![Error](/images)
+![Error](/images/img-un-10/4.jpg)
 
 We got an error, so we add another NULL.
 
-![More NULL](/images)
+![More NULL](/images/img-un-10/5.jpg)
 
 The site didn't return an error.
 Now let's determine which of these fields are responsible for the text.
 
-![Text Field](/images)
+![Text Field](/images/img-un-10/6.jpg)
 
 
 4. Explotation
@@ -50,6 +50,6 @@ We saw that only one field contains text, which means we can't simply display th
 We need to somehow combine them into a single field.
 The CONCAT function will help us with this.
 
-![admin](/images)
+![admin](/images/img-un-10/7.jpg)
 
 Having found the administrator's login and password, we log in using his account and successfully complete this lab.
